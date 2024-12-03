@@ -40,9 +40,13 @@ docker push <account-name>/<image-name>
   ```bash
   docker run -it <image-name>
   ```  
-- Run Ubuntu container with a sleep command:  
+- Run with a sleep command:  
   ```bash
   docker run ubuntu sleep 5
+  ```  
+- Run with environment variable:  
+  ```bash
+  docker run -e <env_name>:<env_value> <image_name>
   ```  
 
 ### Managing Ports and Volumes  
