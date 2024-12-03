@@ -1,34 +1,105 @@
-# docker
 
-## Docker commands
-docker pull: `docker pull <image-name>`
-docker run: `docker run nginx`
-docker run with version: `docker run <image-name>:<version>`
-docker run with input and prompt: `docker run -it <image-name>`
-docker run ububtu with sleep: `docker run ubuntu sleep 5`
-docker rum map port: `docker run -p <docker-host-port>:<docker-container-port> <image-name>
-docker run mount volume: `docker run -v <volume-location>:<dockr-container-location> <image-name>
-docker run detach: `docker run -d <image-name>`
-docker get layer detail: `docker history <image-name>`
-docker attach container: `docker attach <container-id>`
-docker execute command on running container: `docker exec <container-id-or-name> <command>`
-docker list container: `docker ps -a`
-docker list images: `docker images`
-docker inspect cotainer: `docker inspect <container-name-id>`
-docker cotainer logs: `docker logs <container-name-id>`
-docker stop: `docker stop <container-id-or-name>`
-docker remove container: `docker rm <container-id-or-name>`
-docker remove images: `docker rmi <image-name>`
+# Docker  
 
-## Dockerfile
-```
-FROM ubuntu
+A handy guide to essential Docker commands for quick reference and efficient container management.  
 
-RUN apt-get update && apt-get -y install python
+---
 
-RUN pip install flask flask-mysql
+## Docker Commands  
 
-COPY . /opt/source-code
+### Pulling an Image  
+```bash
+docker pull <image-name>
+```  
 
-ENTRYPOINT FLASK_APP=/opt/source-code/app.py flas run
-```
+### Running a Container  
+- Basic run:  
+  ```bash
+  docker run nginx
+  ```  
+- Run with a specific version:  
+  ```bash
+  docker run <image-name>:<version>
+  ```  
+- Run with interactive input and prompt:  
+  ```bash
+  docker run -it <image-name>
+  ```  
+- Run Ubuntu container with a sleep command:  
+  ```bash
+  docker run ubuntu sleep 5
+  ```  
+
+### Managing Ports and Volumes  
+- Map host port to container port:  
+  ```bash
+  docker run -p <docker-host-port>:<docker-container-port> <image-name>
+  ```  
+- Mount a volume:  
+  ```bash
+  docker run -v <volume-location>:<docker-container-location> <image-name>
+  ```  
+
+### Container Management  
+- Run in detached mode:  
+  ```bash
+  docker run -d <image-name>
+  ```  
+- Get image layer details:  
+  ```bash
+  docker history <image-name>
+  ```  
+- Attach to a running container:  
+  ```bash
+  docker attach <container-id>
+  ```  
+- Execute a command in a running container:  
+  ```bash
+  docker exec <container-id-or-name> <command>
+  ```  
+
+### Viewing and Inspecting  
+- List all containers:  
+  ```bash
+  docker ps -a
+  ```  
+- List all images:  
+  ```bash
+  docker images
+  ```  
+- Inspect a container:  
+  ```bash
+  docker inspect <container-name-or-id>
+  ```  
+- View container logs:  
+  ```bash
+  docker logs <container-name-or-id>
+  ```  
+
+### Stopping and Removing  
+- Stop a container:  
+  ```bash
+  docker stop <container-id-or-name>
+  ```  
+- Remove a container:  
+  ```bash
+  docker rm <container-id-or-name>
+  ```  
+- Remove an image:  
+  ```bash
+  docker rmi <image-name>
+  ```  
+
+---
+
+## Contributing  
+Feel free to contribute by adding more commands or improving existing ones! Open a pull request or file an issue for any suggestions.  
+
+---
+
+## License  
+This repository is licensed under the MIT License.  
+
+---
+
+**Happy Dockering!** 🚢
