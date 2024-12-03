@@ -7,9 +7,24 @@ A handy guide to essential Docker commands for quick reference and efficient con
 
 ## Docker Commands  
 
+### Login to docker hub
+```bash
+docker login
+```
+
 ### Pulling an Image  
 ```bash
 docker pull <image-name>
+```  
+
+### Building an Image  
+```bash
+docker build . -t <account-name>/<image-name>
+```  
+
+### Pushing an Image
+```bash
+docker push <account-name>/<image-name>
 ```  
 
 ### Running a Container  
