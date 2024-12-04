@@ -49,12 +49,6 @@ docker push <account-name>/<image-name>
   docker run -e <env_name>:<env_value> <image_name>
   ```  
 
-  ### Docker compose
-  - Run docker compose:
-    ```bash
-    docker-compose up
-    ```  
-
   ### Docker networks 
 - **Deprecated**Run with link command
   ```bash
@@ -126,6 +120,34 @@ docker push <account-name>/<image-name>
   docker rmi <image-name>
   ```  
 
+---
+
+## Docker compose
+
+### Running docker compose
+  - Run docker compose:
+    ```bash
+    docker-compose up
+    ```  
+---
+
+## Docker registry
+
+### Running docker registry locally
+  - Running docker registry locally
+    ```bash
+    docker run -d -p 5000:5000 --name registry registry:2
+    ```
+
+### Push image to registry
+  - Tag an image
+    ```bash
+    docker image tag <image-name> <tag-name>
+    ```
+  - Push image to registry:
+    ```bash
+    docker push <user-name>/<image-name>
+    ```  
 ---
 
 ## Contributing  
