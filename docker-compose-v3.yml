@@ -1,0 +1,17 @@
+version: "3"
+services:
+  <container-name>:
+    build: <location_dockerfile>
+    image: <image-name>
+    ports:
+      - <docker-host-port>:<docker-container-port>
+    environment:
+      <env-name>:<env-value>
+    depends_on:
+      - redis
+    networks:
+      - front-end
+      - back-end
+network:
+  - front-end
+  - back-end

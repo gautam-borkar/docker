@@ -49,6 +49,23 @@ docker push <account-name>/<image-name>
   docker run -e <env_name>:<env_value> <image_name>
   ```  
 
+  ### Docker compose
+  - Run docker compose:
+    ```bash
+    docker-compose up
+    ```  
+
+  ### Docker networks 
+- **Deprecated**Run with link command
+  ```bash
+  docker run -d --link <hostname-in-application>:<container-name> <image-name>
+  ```
+- Run with network command
+  ```bash
+  docker network create my-network
+  docker run --network my-network --name container1 <image1>
+  ```
+
 ### Managing Ports and Volumes  
 - Map host port to container port:  
   ```bash
