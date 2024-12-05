@@ -65,10 +65,26 @@ docker push <account-name>/<image-name>
   ```bash
   docker run -p <docker-host-port>:<docker-container-port> <image-name>
   ```  
-- Mount a volume:  
-  ```bash
-  docker run -v <volume-location>:<docker-container-location> <image-name>
-  ```  
+- Create and mount a volume 
+  - Volume mount
+    ```bash
+    docker volume create <volume_name>
+    docker run --mount type=volume,source=<volume_name>,target=<location_inside_container> mysql
+    ```
+  - Bind mount
+    ```bash
+    docker run --mount type=bind,source=<folder_location_on_docker_host>,target=<location_inside_container> mysql
+    ```
+- **Deprecated**Create and mount a volume 
+  - Volume mount
+    ```bash
+    docker volume create <volume-name>
+    docker run -v <volume-name>:<location_inside_container>
+    ```
+  - Bind mount
+    ```bash
+    docker run -v <folder_location_on_docker_host>:<location_inside_container>
+    ```
 
 ### Container Management  
 - Run in detached mode:  
